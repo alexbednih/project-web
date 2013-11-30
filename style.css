@@ -1,0 +1,132 @@
+html, body, h1, h2, h3, h4, h5, h6, p, ol, ul, li, pre, code, address,
+variable, form, fieldset, blockquote {
+padding: 0;
+margin: 0;
+font-family: Georgia, 'Times New Roman', Times, serif;
+font-size: 100%;
+font-weight: normal;
+}
+
+h1 
+{
+font-size: 150%;
+text-align: center;
+}
+
+p {
+line-height: 1.5;
+}
+
+li {
+list-style-type: none; /* Убираем маркеры */
+}
+
+html
+{
+background: #C2C2C2;
+}
+
+body
+{
+width: 1000px;
+min-height: 800px;
+height: auto !important;
+height: 100%;
+margin-left: auto;
+margin-right: auto;
+background: #FFF;
+}
+
+#topmenu
+{
+clear:right;
+}
+
+#login
+{
+text-align: center;
+width: 300px;
+background: #F2F2F2;
+float: right;
+margin: 2px;
+padding: 5px;
+border: 1px solid #FD8000;
+border-left: 5px solid #FD8000;
+}
+
+.mainpanel
+{
+background: #F2F2F2;
+border: 1px solid #FD8000;
+border-top: 20px solid #FD8000;
+margin: 1px;
+padding: 0px;
+}
+
+#main
+{
+width: 518px;
+min-height: 709px;
+margin-left: 205px;
+
+}
+
+#top-lsidebar
+{
+width: 200px;
+height: 186px;
+float: left;
+padding: -5px;
+}
+
+#bottom-lsidebar
+{
+width: 200px;
+min-height: 500px;
+height: 100%;
+clear: left;
+float: left;
+}
+
+#top-rsidebar
+{
+width: 270px;
+min-height: 709px;
+height: 100%;
+float: right;
+margin-right: 2px;
+}
+h4
+{
+font-size:100%;
+text-align: center;
+}
+
+
+#footer
+{
+width: 1000px;
+height: 30px;
+background: #FD8000;
+clear:both;
+bottom: 0;
+text-align: center;
+}
+
+a:link,a:visited
+{
+display:block;
+font-weight:bold;
+color:#FFFFFF;
+background-color:#98bf21;
+text-align:center;
+padding:4px;
+text-decoration:none;
+}
+a:hover,a:active
+{
+background-color:#7A991A;
+}
+
+
+

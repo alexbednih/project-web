@@ -1,0 +1,6 @@
+iAction{render();}
+
+LoginActionImpl
+{
+iAction в котором прописать рендер
+}
