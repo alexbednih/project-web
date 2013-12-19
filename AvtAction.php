@@ -37,4 +37,5 @@ class AvtAction implements iAction {
 
       return $smarty->fetch($template);
    }
+
 }

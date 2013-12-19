@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.15, created on 2013-12-14 03:14:52
+<?php /* Smarty version Smarty-3.1.15, created on 2013-12-20 02:49:35
          compiled from ".\templates\index.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:27587529ad3c24f8e27-19911782%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     '749422d4cfc3eb5677cf499730392b6accd4d1c7' => 
     array (
       0 => '.\\templates\\index.tpl',
-      1 => 1386962004,
+      1 => 1387478964,
       2 => 'file',
     ),
   ),
@@ -23,6 +23,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     'names' => 0,
     'loginn' => 0,
     'content' => 0,
+    'conntent' => 0,
   ),
   'has_nocache_code' => false,
 ),false); /*/%%SmartyHeaderCode%%*/?>
@@ -40,11 +41,15 @@ $_valid = $_smarty_tpl->decodeProperties(array (
 			<br />
 		</div>
 		<div id="topmenu">
-                  <?php if (isset($_smarty_tpl->tpl_vars['loginn']->value)) {?>
-		  <a href="addst.php">Добавить запись</a>
-                  <?php }?>
+                <?php if (isset($_smarty_tpl->tpl_vars['loginn']->value)) {?>
+		            <a href="index.php?action=5">Добавить запись</a>
+                <?php }?>
 		</div>
 		<div class="mainpanel" id="top-rsidebar">
+		  <?php if (isset($_smarty_tpl->tpl_vars['loginn']->value)) {?>
+                Вы вошли на сайт как <?php echo $_smarty_tpl->tpl_vars['loginn']->value;?>
+
+		  <?php }?>
 		  <?php echo $_smarty_tpl->tpl_vars['content']->value;?>
                   
 		</div>
@@ -58,8 +63,13 @@ $_valid = $_smarty_tpl->decodeProperties(array (
 			
 		</div>
 		<div class="mainpanel" id="main">
-                  <?php echo $_smarty_tpl->getSubTemplate ("main.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, null, array(), 0);?>
+            <?php if (isset($_smarty_tpl->tpl_vars['conntent']->value)) {?>
+                <?php echo $_smarty_tpl->getSubTemplate ("addstat.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, null, array(), 0);?>
 
+            <?php } else { ?>    
+                <?php echo $_smarty_tpl->getSubTemplate ("main.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, null, array(), 0);?>
+
+            <?php }?>    
 		</div>
 		<div id="footer">
 			<p>BledAks &copy</p>

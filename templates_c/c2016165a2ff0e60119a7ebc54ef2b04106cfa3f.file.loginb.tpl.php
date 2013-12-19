@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.15, created on 2013-12-14 14:38:42
+<?php /* Smarty version Smarty-3.1.15, created on 2013-12-20 03:29:25
          compiled from ".\templates\loginb.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:627052abfcf245fa82-98966249%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     'c2016165a2ff0e60119a7ebc54ef2b04106cfa3f' => 
     array (
       0 => '.\\templates\\loginb.tpl',
-      1 => 1384587505,
+      1 => 1387481347,
       2 => 'file',
     ),
   ),
@@ -15,16 +15,11 @@ $_valid = $_smarty_tpl->decodeProperties(array (
   'function' => 
   array (
   ),
-  'variables' => 
-  array (
-    'loginn' => 0,
-  ),
-  'has_nocache_code' => false,
   'version' => 'Smarty-3.1.15',
   'unifunc' => 'content_52abfcf25cbea1_35617560',
+  'has_nocache_code' => false,
 ),false); /*/%%SmartyHeaderCode%%*/?>
-<?php if ($_valid && !is_callable('content_52abfcf25cbea1_35617560')) {function content_52abfcf25cbea1_35617560($_smarty_tpl) {?>Вы вошли на сайт, как <?php echo $_smarty_tpl->tpl_vars['loginn']->value;?>
-
-<form action="vih.php" method="post">
-<p><input type="submit" value="Выйти" name="submit"></p>
+<?php if ($_valid && !is_callable('content_52abfcf25cbea1_35617560')) {function content_52abfcf25cbea1_35617560($_smarty_tpl) {?>
+<form id="vih" action="" method="post">
+<p><input type="submit" formaction="vih.php" value="Выйти" name="submit"></p>
 <?php }} ?>

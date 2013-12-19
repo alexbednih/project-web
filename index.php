@@ -33,28 +33,40 @@ for($i = 0; $i<mysql_num_rows($result); $i++)
 //Обработка Гета
 
 
-define('LOGIN_ACTION', 2);
-define('AVT_ACTION', 3)
+//define('LOGIN_ACTION', 2);
+//define('AVT_ACTION', 3)
 switch ($_GET['action']) {
-  case LOGIN_ACTION:
+  case 2://LOGIN_ACTION:
     break;
-  case AVT_ACTION:
-    $actionClass = 'AvtAction';
+  case 3://AVT_ACTION:
+    include_once "AvtAction.php";
+    $action = new $actionClass();
+    $content = $action->render();
     break;
+  case 5://ADD_STAT
+//    include_once "AddStat.php";
+  //  $actionn = new $actionClass();
+$conntent='ne_pustoe';
+    //$conntent = $action->render();
+    break;  
   default:
-    $actionClass = 'LoginAction';
+//    $actionClass = 'LoginAction';
+//    var_dump($actionClass);
     break;
 }
-var_dump($actionClass);
 
-//$actionClass = 'LoginAction';
+
+$actionClass = 'LoginAction';
 include_once "{$actionClass}.php";
 
 
 $action = new $actionClass();
 
 $content = $action->render();
-var_dump($_SESSION['login']);
+
+
+$loginn=$_SESSION['login'];
+//var_dump($loginn);
 
 
 //передача переменных шаблонам
@@ -62,10 +74,11 @@ $smarty->assign('row',$row);
 $smarty->assign('site_name',$site_name);
 $smarty->assign('names',$names);
 $smarty->assign('avtorizac',$avtorizac);
-$smarty->assign('loginn',$_SESSION['login']);
+$smarty->assign('loginn',$loginn);
 $smarty->assign('temp',$temp);
 //подключение к шаблону
 $smarty->assign('content', $content);
+$smarty->assign('conntent',$conntent);
 echo $smarty->fetch('index.tpl');
 ?>
 

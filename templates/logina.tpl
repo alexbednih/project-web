@@ -1,4 +1,4 @@
-<form action="index.php?action=3" method="post">
+<form name="avtoriz" action="index.php?action=3" method="post">
 <input type="hidden" name="seenform" value="y">
 <label>Авторизация</label>
 <p><strong>Логин:</strong></p>

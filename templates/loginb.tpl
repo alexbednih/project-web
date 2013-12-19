@@ -1,3 +1,3 @@
-Вы вошли на сайт, как {$loginn}
-<form action="vih.php" method="post">
-<p><input type="submit" value="Выйти" name="submit"></p>
+
+<form id="vih" action="" method="post">
+<p><input type="submit" formaction="vih.php" value="Выйти" name="submit"></p>
