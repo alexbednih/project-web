@@ -38,31 +38,31 @@ $loginn=$_SESSION['login'];
 //define('AVT_ACTION', 3)
 switch ($_GET['action']) {
   case 2://LOGIN_ACTION:
-  $site_name = 'Название - Об авторе';
+    $site_name = 'Название - Об авторе';
     $actionClass = 'AboutAction';
     include_once "{$actionClass}.php";
     $action = new $actionClass();
     $comtent = $action->render();
-
     break;
   case 3://AVT_ACTION:
-    include_once "AvtAction.php";
+    $actionClass = 'AvtAction';
+    include_once "{$actionClass}.php";
     $action = new $actionClass();
-    $content = $action->render();
+    $comtent = $action->render();   
+    //$_POST['login'],$_POST['password'],$names
     break;
+  case 4:
+    
+    break;  
   case 5://ADD_STAT
-    //    include_once "AddStat.php";
-    //  $actionn = new $actionClass();
-    //$conntent='ne_pustoe';
-    //$conntent = $action->render();
-$site_name = 'Название - Добавление записи';
+    $site_name = 'Название - Добавление записи';
     $actionClass = 'AddAction';
     include_once "{$actionClass}.php";
     $action = new $actionClass();
     $comtent = $action->render();   
     break; 
   case 6:
-  $site_name = 'Название - Добавление записи';
+    $site_name = 'Название - Добавление записи';
     $actionClass = 'AddstatAction';
     include_once "{$actionClass}.php";
     $action = new $actionClass();
