@@ -32,11 +32,13 @@ for($i = 0; $i<mysql_num_rows($result); $i++)
 //окончание запроса к БД
 //Обработка Гета
 
+$loginn=$_SESSION['login'];
 
 //define('LOGIN_ACTION', 2);
 //define('AVT_ACTION', 3)
 switch ($_GET['action']) {
   case 2://LOGIN_ACTION:
+  $site_name = 'Название - Об авторе';
     $actionClass = 'AboutAction';
     include_once "{$actionClass}.php";
     $action = new $actionClass();
@@ -53,13 +55,14 @@ switch ($_GET['action']) {
     //  $actionn = new $actionClass();
     //$conntent='ne_pustoe';
     //$conntent = $action->render();
-
+$site_name = 'Название - Добавление записи';
     $actionClass = 'AddAction';
     include_once "{$actionClass}.php";
     $action = new $actionClass();
     $comtent = $action->render();   
     break; 
   case 6:
+  $site_name = 'Название - Добавление записи';
     $actionClass = 'AddstatAction';
     include_once "{$actionClass}.php";
     $action = new $actionClass();
@@ -69,7 +72,7 @@ switch ($_GET['action']) {
     $actionClass = 'IndexAction';
     include_once "{$actionClass}.php";
     $action = new $actionClass();
-    $comtent = $action->render();  
+    $comtent = $action->render($row,$loginn);  
     break;
 }
 $actionClass = 'LoginAction';
@@ -77,7 +80,6 @@ include_once "{$actionClass}.php";
 $action = new $actionClass();
 $content = $action->render();
 
-$loginn=$_SESSION['login'];
 //var_dump($loginn);
 
 
