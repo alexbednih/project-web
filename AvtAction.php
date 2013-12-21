@@ -4,9 +4,6 @@ class AvtAction implements iAction {
    public function render() {
     $db = mysql_connect ("localhost","root","1234");
         mysql_select_db ("sait", $db);
-    //$stringa='',$stringb='',$stringc=''
-    var_dump($_POST['login']);
-    var_dump($_POST['password']);
       $smarty = new Smarty();
     if (isset($_POST['login'])) { $login = $_POST['login']; if ($login == '') { unset($login);} }
     if (isset($_POST['password'])) { $password=md5($_POST['password']); if ($password =='') { unset($password);} }
