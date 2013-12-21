@@ -3,7 +3,7 @@
 session_start();
 
 //подключение к БД
-include_once('bd.php');
+include_once 'bd.php';
 include_once 'iAction.php';
 
 //include_once("LoginAction.php");
@@ -44,26 +44,30 @@ switch ($_GET['action']) {
     $content = $action->render();
     break;
   case 5://ADD_STAT
-//    include_once "AddStat.php";
-  //  $actionn = new $actionClass();
-$conntent='ne_pustoe';
+    //    include_once "AddStat.php";
+    //  $actionn = new $actionClass();
+    $conntent='ne_pustoe';
     //$conntent = $action->render();
-    break;  
+    break; 
+  case 6:
+  echo "string";
+    $actionnClass ='AddStatAction';
+  echo "string";  
+    include_once "{actionnClass}.php"; 
+  echo "string";
+    $actionn = new $actionnClass();
+  echo "string";
+    $comtent = $actionn->render();    
+  
   default:
 //    $actionClass = 'LoginAction';
 //    var_dump($actionClass);
     break;
 }
-
-
 $actionClass = 'LoginAction';
 include_once "{$actionClass}.php";
-
-
 $action = new $actionClass();
-
 $content = $action->render();
-
 
 $loginn=$_SESSION['login'];
 //var_dump($loginn);
@@ -77,6 +81,7 @@ $smarty->assign('avtorizac',$avtorizac);
 $smarty->assign('loginn',$loginn);
 $smarty->assign('temp',$temp);
 //подключение к шаблону
+$smarty->assign('comtent', $comtent);
 $smarty->assign('content', $content);
 $smarty->assign('conntent',$conntent);
 echo $smarty->fetch('index.tpl');

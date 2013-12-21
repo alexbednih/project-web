@@ -30,6 +30,7 @@
 			
 		</div>
 		<div class="mainpanel" id="main">
+			{$comtent}
             {if isset($conntent)}
                 {include file="addstat.tpl"}
             {else}    
