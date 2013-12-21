@@ -30,12 +30,12 @@
 			
 		</div>
 		<div class="mainpanel" id="main">
-			{$comtent}
+			{$comtent}<!--
             {if isset($conntent)}
                 {include file="addstat.tpl"}
             {else}    
                 {include file="main.tpl"}
-            {/if}    
+            {/if}    -->
 		</div>
 		<div id="footer">
 			<p>BledAks &copy</p>

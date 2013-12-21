@@ -37,6 +37,11 @@ for($i = 0; $i<mysql_num_rows($result); $i++)
 //define('AVT_ACTION', 3)
 switch ($_GET['action']) {
   case 2://LOGIN_ACTION:
+    $actionClass = 'AboutAction';
+    include_once "{$actionClass}.php";
+    $action = new $actionClass();
+    $comtent = $action->render();
+
     break;
   case 3://AVT_ACTION:
     include_once "AvtAction.php";
@@ -46,22 +51,25 @@ switch ($_GET['action']) {
   case 5://ADD_STAT
     //    include_once "AddStat.php";
     //  $actionn = new $actionClass();
-    $conntent='ne_pustoe';
+    //$conntent='ne_pustoe';
     //$conntent = $action->render();
+
+    $actionClass = 'AddAction';
+    include_once "{$actionClass}.php";
+    $action = new $actionClass();
+    $comtent = $action->render();   
     break; 
   case 6:
-  echo "string";
-    $actionnClass ='AddStatAction';
-  echo "string";  
-    include_once "{actionnClass}.php"; 
-  echo "string";
-    $actionn = new $actionnClass();
-  echo "string";
-    $comtent = $actionn->render();    
-  
+    $actionClass = 'AddstatAction';
+    include_once "{$actionClass}.php";
+    $action = new $actionClass();
+    $comtent = $action->render();    
+    break;
   default:
-//    $actionClass = 'LoginAction';
-//    var_dump($actionClass);
+    $actionClass = 'IndexAction';
+    include_once "{$actionClass}.php";
+    $action = new $actionClass();
+    $comtent = $action->render();  
     break;
 }
 $actionClass = 'LoginAction';

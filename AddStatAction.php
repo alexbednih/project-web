@@ -1,7 +1,7 @@
 <?php
-class AddStatAction implements iAction {
+class AddstatAction implements iAction {
     public function render() {
-    $smarty = new Smarty();/*
+    $smarty = new Smarty();
     if (isset($_POST['name'])) { $name = $_POST['name']; if ($name == '') { unset($name);} } //заносим введенный пользователем логин в переменную $login, если он пустой, то уничтожаем переменную
     if (isset($_POST['body'])) { $body=$_POST['body']; if ($body =='') { unset($body);} }
     //заносим введенный пользователем пароль в переменную $password, если он пустой, то уничтожаем переменную
@@ -23,9 +23,8 @@ class AddStatAction implements iAction {
     }
     else {
     $template= 'asb.tpl';
-    }*/
-    $tempp='asb.tpl';
-    return $smarty->fetch($tempp);
+    }
+    return $smarty->fetch($template);
 }
 }    
 
