@@ -39,6 +39,10 @@ switch ($_GET['action']) {
     $actionClass = 'EditstAction';
     $idnews=$_GET['idnews'];
     break;  
+  case 8:
+    $actionClass = 'DelAction';
+    $idnews=$_GET['idnews'];
+    break;
   default:
     $actionClass = 'IndexAction';
     break;
@@ -48,6 +52,11 @@ switch ($_GET['action']) {
       include_once "{$actionClass}.php";
       $action = new $actionClass();
       $editstat = $action->render($idnews);
+  }
+    elseif ($_GET['action']==8) {
+      include_once "{$actionClass}.php";
+      $action = new $actionClass();
+      $comtent = $action->render($idnews);
   }
     elseif ($_GET['id_news']==NULL) {
     include_once "{$actionClass}.php";
