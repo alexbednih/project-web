@@ -1,6 +1,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <link rel="stylesheet" type="text/css" href="style.css">
+<link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
 <title>{$site_name}</title>
 </head>
 <body>
@@ -30,12 +31,8 @@
 			
 		</div>
 		<div class="mainpanel" id="main">
-			{$comtent}<!--
-            {if isset($conntent)}
-                {include file="addstat.tpl"}
-            {else}    
-                {include file="main.tpl"}
-            {/if}    -->
+			{$comtent}
+			{$editstat}
 		</div>
 		<div id="footer">
 			<p>BledAks &copy</p>
