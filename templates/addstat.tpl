@@ -1,3 +1,4 @@
+{if isset($loginn)}
 <p align="center">Добавление записи</p>
 <br>
 <form id="add" action="index.php?action=6" method="post">
@@ -7,3 +8,6 @@
     <p><textarea cols="25" pows="20" name="body"></textarea></p>
     <p><input type="submit"  value="Добавить" name="submit"></p>
 </form>
+{else}
+<p>Вы не авторизованы! Войдите или зарегистрируйтесь.</p>
+{/if}

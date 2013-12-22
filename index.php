@@ -56,19 +56,19 @@ switch ($_GET['action']) {
     elseif ($_GET['action']==8) {
       include_once "{$actionClass}.php";
       $action = new $actionClass();
-      $comtent = $action->render($idnews);
+      $comtent = $action->render($idnews,$loginn);
   }
     elseif ($_GET['id_news']==NULL) {
     include_once "{$actionClass}.php";
     $action = new $actionClass();
-    $comtent = is_null($_GET['action']) ? $action->render($row,$loginn) : $action->render();
+    $comtent = is_null($_GET['action']) ? $action->render($row,$loginn) : $action->render($loginn);
   } 
   else{
     $site_name = "Назавание - Редактирование записи";
     $actionClass = 'EditstatAction';
     include_once "{$actionClass}.php";
     $action = new $actionClass();
-    $editstat = $action->render($_GET['id_news']);
+    $editstat = $action->render($_GET['id_news'],$loginn);
   }
 $actionClass = 'LoginAction';
 include_once "{$actionClass}.php";

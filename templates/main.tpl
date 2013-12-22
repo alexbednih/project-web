@@ -1,6 +1,7 @@
 {$i=1}
 {foreach $row as $item}
-	<hr>{$i} запись: 
+	<hr>
+	{$i} запись:
 	{$item.name}<br><br>
 	{$item.body}<br><br>
 	{if isset($loginn)}

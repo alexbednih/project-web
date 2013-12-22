@@ -1,6 +1,6 @@
 <?php
 class EditstatAction implements iAction {
-   public function render($id_news=int) {
+   public function render($id_news=int,$loginn='') {
       $smarty = new Smarty();
       include 'bd.php';
       $result = mysql_query("SELECT * FROM news WHERE id_news=$id_news");
@@ -17,6 +17,7 @@ class EditstatAction implements iAction {
       $smarty->assign('name',$row[0]['name']);
       $smarty->assign('body',$row[0]['body']);
       $smarty->assign('idnews',$id_news);
+      $smarty->assign('loginn',$loginn);
       return $smarty->fetch($template);
    }
 }
